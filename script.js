@@ -38,9 +38,10 @@ function generateCalender(month, year) {
       let cell = document.createElement("td");
       if (i === 0 && j < firstDay) {
         cell.innerText = "";
+        cell.classList.add("bg-light");
       } else if (date > daysInMonth) {
         cell.innerText = "";
-        // break;
+        cell.classList.add("bg-light");
       } else {
         cell.innerText = String(date);
         cell.classList.add("p-3", "border", "cursor-pointer");
