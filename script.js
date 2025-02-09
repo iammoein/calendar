@@ -113,17 +113,14 @@ function openEventModal(day) {
 
   const saveEventBtn = document.getElementById("saveEventBtn");
 
-  saveEventBtn.addEventListener(
-    "click",
-    function () {
-      if (eventTitle.value === "") {
-        modalError.innerText = "Field is empty";
-      } else {
-        modal.hide();
-      }
-    },
-    { once: true }
-  );
+  saveEventBtn.addEventListener("click", function () {
+    if (eventTitle.value === "") {
+      modalError.innerText = "Field is empty";
+    } else {
+      modalError.innerText = "";
+      modal.hide();
+    }
+  });
 }
 
 // Update Header
