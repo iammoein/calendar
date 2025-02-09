@@ -20,7 +20,7 @@ let currentMonth = currentDate.getMonth();
 let currentYear = currentDate.getFullYear();
 updateCalendar();
 
-//Make Calender
+// Make Calender
 function generateCalender(month, year) {
   let firstDay = new Date(year, month, 1).getDay();
   let daysInMonth = new Date(year, month + 1, 0).getDate();
@@ -65,6 +65,7 @@ function generateCalender(month, year) {
   }
 }
 
+//Navigation
 function prevMonth() {
   currentMonth--;
   if (currentMonth < 0) {
@@ -83,6 +84,7 @@ function nextMonth() {
   updateCalendar();
 }
 
+// Update Calendar
 function updateCalendar() {
   monthTitle.textContent = `${monthNames[currentMonth]} ${currentYear}`;
   generateCalender(currentMonth, currentYear);
@@ -94,7 +96,7 @@ const nextMonthBtn = document.getElementById("next-month");
 prevMonthBtn.addEventListener("click", prevMonth);
 nextMonthBtn.addEventListener("click", nextMonth);
 
-//Modal
+// Modal
 function openEventModal(day) {
   const modalLabel = document.getElementById("eventModalLabel");
   modalLabel.innerText = `Add Event for ${day} ${monthNames[currentMonth]} ${currentYear}`;
